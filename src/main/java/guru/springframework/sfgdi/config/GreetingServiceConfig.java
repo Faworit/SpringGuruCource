@@ -13,7 +13,9 @@ import org.springframework.context.annotation.*;
  * Created by jt on 2/20/21.
  */
 
-@PropertySource("classpath:datasours.properties")
+//@PropertySource("classpath:datasours.properties")
+/* we use this annotation if we use not Spring Boot
+ (application.properties) datasours.properties. Application.properties use with out that annotation*/
 @Configuration
 public class GreetingServiceConfig {
 

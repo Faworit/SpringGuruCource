@@ -1,5 +1,6 @@
 package guru.springframework.sfgdi;
 
+import guru.springframework.sfgdi.config.DataConstructorConfig;
 import guru.springframework.sfgdi.controllers.*;
 import guru.springframework.sfgdi.datasours.DataConnection;
 import org.springframework.boot.SpringApplication;
@@ -34,7 +35,7 @@ public class SfgDiApplication {
 		SetterInjectedController setterInjectedController = (SetterInjectedController) ctx.getBean("setterInjectedController");
 		System.out.println(setterInjectedController.getGreeting());
 
-		System.out.println("-------- Constructor" );
+		System.out.println("-------- Constructor");
 		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
 		System.out.println(constructorInjectedController.getGreeting());
 
@@ -43,6 +44,14 @@ public class SfgDiApplication {
 		System.out.println("data username: " + dataConnection.getUsername());
 		System.out.println("data password: " + dataConnection.getPassword());
 		System.out.println("data jdbcurl: " + dataConnection.getJdbcurl());
+
+		System.out.println("------- Constructor configuration");
+
+		DataConstructorConfig dataConstructorConfig = ctx.getBean(DataConstructorConfig.class);
+		System.out.println("data constructor username: " + dataConstructorConfig.getUsername());
+		System.out.println("data constructor password: " + dataConstructorConfig.getPassword());
+		System.out.println("data constructor jdbcurl: " + dataConstructorConfig.getJdbcurl());
+
 	}
 
 }

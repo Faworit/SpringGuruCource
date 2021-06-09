@@ -19,7 +19,7 @@ import org.springframework.context.annotation.*;
 @Configuration
 public class GreetingServiceConfig {
 
-    @Bean
+    /*@Bean
     DataConnection dataConnection(@Value("${guru.username}") String username,
                                   @Value("${guru.password}") String password,
                                   @Value("${guru.jdbcurl}") String jdbcurl) {
@@ -27,6 +27,17 @@ public class GreetingServiceConfig {
         dataConnection.setUsername(username);
         dataConnection.setPassword(password);
         dataConnection.setJdbcurl(jdbcurl);
+
+        return dataConnection;
+    }*/
+
+    //configuration when we create config.DataCofiguration
+    @Bean
+    DataConnection dataConnection(DataConfiguration dataConfiguration) {
+        DataConnection dataConnection = new DataConnection();
+        dataConnection.setUsername(dataConfiguration.getUsername());
+        dataConnection.setPassword(dataConfiguration.getPassword());
+        dataConnection.setJdbcurl(dataConfiguration.getJdbcurl());
 
         return dataConnection;
     }

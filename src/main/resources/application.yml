@@ -1,8 +1,18 @@
 spring:
   profiles:
-    active: cat, EN
+    active: cat, EN, prod
 
 guru:
   username: superuser
   password: testpassYML
   jdbcurl: testurlYML
+
+---
+# 3 dash meant that further start other yaml file
+spring:
+  profiles: prod
+
+guru:
+  username: superuserPROD
+  password: testpassYMLPROD
+  jdbcurl: testurlYMLPROD

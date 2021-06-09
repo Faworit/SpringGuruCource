@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    active: cat, EN
+
+guru:
+  username: superuser
+  password: testpassYML
+  jdbcurl: testurlYML
